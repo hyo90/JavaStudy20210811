@@ -16,10 +16,10 @@ public class Quiz2753 {
 		
 		if (year%4 == 0 && year%100 != 0 || year%400 == 0) { // year이 4로 나누었을때 0이냐, 100으로 나누었을때 0이 아니여야한다, 이고~ && 또는 ||
 		     result = 1;
-		     System.out.println("윤년입니다.");	
+		     System.out.println("윤년입니다.!!");	
 		   } else {
 			   result = 0;
-			   System.out.println("윤년이 아닙니다.");
+			   System.out.println("윤년이 아닙니다.!!");
 		   }
 		
 		
