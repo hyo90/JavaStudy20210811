@@ -16,7 +16,7 @@ public class Quiz14681 {
 		
 		
 		if(x > 0 && y > 0 ) {
-			System.out.println("1사분면");;;
+			System.out.println("1사분면");
 		}else if(x < 0 && y > 0) {
 			System.out.println("2사분면");		
 		}else if(x < 0 && y < 0) {
