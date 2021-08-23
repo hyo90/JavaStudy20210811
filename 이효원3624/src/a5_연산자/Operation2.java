@@ -3,7 +3,7 @@ package a5_연산자;
 public class Operation2 {
 
 	public static void main(String[] args) {
-//		★논리 연산자 (and, or) (trun, false)
+//		★논리 연산자 (and, or) (true, false)
 //		AND (&&) = 곱
 //		OR (||) = 합
 //		NOT(!) = 반전 '반전이라는건 뭘까아ㅏ~~~
