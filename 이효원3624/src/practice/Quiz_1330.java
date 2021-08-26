@@ -22,6 +22,7 @@ public class Quiz_1330 {
 		 }
 		 
 	}
+}
 	 
 		
 

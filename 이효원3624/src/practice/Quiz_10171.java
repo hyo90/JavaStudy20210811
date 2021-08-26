@@ -1,4 +1,4 @@
-package practice_BaekJoon;
+package practice;
 
 public class Quiz_10171 {
 

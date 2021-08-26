@@ -1,4 +1,4 @@
-package practice_BaekJoon;
+package practice;
 
 import java.util.Scanner;
 
