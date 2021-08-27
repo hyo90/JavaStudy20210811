@@ -2,6 +2,8 @@ package a9_메소드;
 
 public class Bingsu {
 	
+//	toMAke - 메소드 
+//	어떤재료를 가지고 ? 
 	String toMake (String material, int materialCount, String material2) { //tomake 친구 ㅠㅠ 친구가할수잇는동작 / 가운데 int
 		String bingsu = material + materialCount + "개와" + material2 + "가 들어간 빙수";
 		return bingsu;
