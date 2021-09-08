@@ -4,8 +4,12 @@ public class OXCount {
 
 	public static void main(String[] args) {
 //		3차원 배열
-		String[][][] quiz = new String [3][2][3];
-// (((ooo)(ooo))((ooo)(ooo))((ooo)(ooo))) 이런게 3차원 배열
+		String[][][] quiz = new String [3][2][3]; // 3 X 2 X 3 = 18개의 공간
+		
+		int count_O = 0;
+		int count_X = 0;
+		
+// (((ooo)(ooo))((ooo)(ooo))((ooo)(ooo))) 이런게 3차원 배열 (다차원)
 //		알아서 0,1,2,3으로 해서 자리수가 만들어짐 인덱스 자리번호??0.1/ 0.2 이러ㅏㄴ궈
 		
 		
@@ -29,7 +33,7 @@ public class OXCount {
 		
 		//
 		//quiz[i][j][k] = I+J+k%2 == 0 -> "0"; 이거시조건			
-		for (int i = 0; i < quiz.length; i++) {
+		for (int i = 0; i < quiz.length; i++) { //
 			for(int j = 0; j < quiz[i].length; j++) {
 				for(int k = 0; k < quiz[i][j].length; k++) {
 					quiz[i][j][k] = (i+j+k) % 2 == 0 ? "O" : "X";
@@ -41,12 +45,21 @@ public class OXCount {
 				// OXO, OOO
 				// OOX, OXO
 				// OXO, OOX
+		
+		
 		for (int i = 0; i < quiz.length; i++) {
 			for(int j = 0; j < quiz[i].length; j++) {
 				for(int k = 0; k < quiz[i][j].length; k++) {
+					if (quiz[i][j][k].equals("O")){
+						count_O++;
+					}
+					else {
+						count_X++;
+					}
 					System.out.print(quiz[i][j][k]); //이렇게하면 걍 길게나옴 
+				
 				}
-				System.out.println(quiz[i].length-1 == j ? "\n" : ","); // "/n" 라인을 줄바꿈하라
+				System.out.print(quiz[i].length-1 == j ? "\n" : "," ); // "/n" 라인을 줄바꿈하라
 				
 //				if(quiz[i].length-1 == j) {
 //					System.out.println("");
@@ -54,6 +67,12 @@ public class OXCount {
 //				System.out.print(", ");//j가끝나면,해달라
 //			}
 		}
-	}}}
+	}
+		System.out.println("O의 갯수 : " + count_O + "개");	
+		System.out.println("x의 개수 : " + count_X + "개");
+		
+	}}
+
+
 
 

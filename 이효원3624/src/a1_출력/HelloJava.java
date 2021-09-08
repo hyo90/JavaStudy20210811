@@ -3,7 +3,7 @@ package a1_출력;
 public class HelloJava {
 
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub 주석 // 기본주석 삭제해도 됨
+		// TODO Auto-generated method stub 주석 // 기본주석 삭제해도 됨 (ctrl + /)
 		System.out.println("Hello, Java!");
 		// system : 운영체제의 기능을 사용
 		// out : 운영체제의 기능 중 출력을 담당하는 기능
