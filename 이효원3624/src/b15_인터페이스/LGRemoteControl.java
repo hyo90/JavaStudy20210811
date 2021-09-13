@@ -1,7 +1,7 @@
 package b15_인터페이스;
 
-public class LGRemoteControl {
-	private Switch powerSwitch = new SwitchImpl();
+public class LGRemoteControl { //리모컨 클래스
+	private Switch powerSwitch = new SwitchImpl(); //접근권한(클래스 내) 스위치 
 	private Switch volumeSwitch = new SwitchImpl();
 	
 	public LGRemoteControl() {
