@@ -3,8 +3,6 @@ package b18_ÄÃ·º¼Ç;
 import java.util.HashSet;
 import java.util.Set;
 
-
-
 public class StudentSet {
 
 	public static void main(String[] args) {
