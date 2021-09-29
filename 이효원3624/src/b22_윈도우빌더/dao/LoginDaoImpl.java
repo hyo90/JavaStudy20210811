@@ -1,4 +1,4 @@
-package b20_데이터베이스;
+package b22_윈도우빌더.dao;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;

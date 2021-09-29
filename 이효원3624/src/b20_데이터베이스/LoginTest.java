@@ -19,6 +19,8 @@ public class LoginTest {
 		System.out.println("비밀번호 : ");
 		String password = input.nextLine();
 		
+
+		int flag = 0;
 		int flag = loginDao.login(id, password);
 		
 		if (flag == 0) {
