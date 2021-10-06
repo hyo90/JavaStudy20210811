@@ -5,4 +5,5 @@ public interface SignUpService {
 	public int idCheck(String id);
 	public String isEmptyValues(String[] values);
 	public String  equalsPassword(String pwd, String repwd);
+	public boolean signUp(String[] valuse);
 }

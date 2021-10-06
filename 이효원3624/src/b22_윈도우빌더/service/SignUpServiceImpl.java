@@ -73,8 +73,12 @@ public class SignUpServiceImpl implements SignUpService {
 			msg = "비밀번호가 일치하지 않습니다.\n 다시 입력하세요";
 		}
 		
-		
-		return null;
+		return msg;
+	}
+	
+	@Override
+	public boolean signUp(String[] valuse) {
+		return signUpDao.signUp(valuse);
 	}
 }
 
