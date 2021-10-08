@@ -39,7 +39,8 @@ public class OverloadingEx {//이걸 메인문이라고 생각하고 만듦 이거시 오버로딩
 		int numberSum = add(20);
 		double numbermu1 = mu1(2, 10.5); //변환을 double로 받아야하는데 
 		System.out.println("두 수의 합은? " + numberSum);
-		System.out.println("곱셈 : " + numbermu1);
+		System.out.println("곱셈 :"
+				+ " " + numbermu1);
 		
 //		 값이 문자면 밑에껄로 int면 위에걸로 결과값 출력됨
 //		이름은 같고 매개변수의 자료형이 다를떄는 다시 정의할떄 가능

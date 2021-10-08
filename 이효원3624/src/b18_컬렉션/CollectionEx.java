@@ -61,6 +61,6 @@ public class CollectionEx {
 //	Collection<E> c = new Collection<E>() { //무명클래스(익명클래스)라고 하는 방식... 지금은 하지않겠따}
 	Collection<String> c; //자료형으로 제네릭 설정
 	List<String> 1;
-
+}
 
 

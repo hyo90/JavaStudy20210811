@@ -131,11 +131,12 @@ public class User extends JFrame { //JFrame을 상속받고있음
 					loginSession = loginService.getUserDto(login_id_tf.getText());
 					welcomMsg.setText(loginSession.getUser_name() + "님 환영합니다.");
 					
-					
-					
 				}
 			}
 		});
+		
+		
+		
 		login_btn.setBounds(479, 121, 111, 85);
 		login_pan.add(login_btn);
 		
@@ -447,14 +448,11 @@ public class User extends JFrame { //JFrame을 상속받고있음
 		update_btn.setBounds(574, 217, 97, 23);
 		update_btn.setEnabled(false);
 		mypage_pan.add(update_btn);
-	} 
-	}
-}
 
 
+		}
 
-
-
+		
 
 
 
