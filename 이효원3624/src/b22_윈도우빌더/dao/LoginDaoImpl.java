@@ -91,7 +91,7 @@ public class LoginDaoImpl implements LoginDao {//LoginDao임플리먼트함 상속
 		try {
 			con = pool.getConnection();
 			sql = "select * from use_mst where user_id = ?";
-			pstmt = con.prepareStatment(sql);
+			pstmt = con.prepareStatement(sql);
 			pstmt.setNString(1,  id);
 			rs = pstmt.executeQuery();
 			

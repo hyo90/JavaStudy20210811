@@ -1,10 +1,11 @@
-package b22_孺紫辦網渦;
+package b22_孺紫辦網渦.dao;
 
 import java.sql.Connection;
+import java.sql.PreparedStatement;
 
 import db.DBConnectionMgr;
 
-public class DeleterUserImpl implements DeleteUserDto {
+public class DeleteUserDaoImpl implements DeleteUserDao {
 	private DBConnectionMgr pool;
 	
 	public DeleteUserDaoImpl() {
@@ -14,7 +15,7 @@ public class DeleterUserImpl implements DeleteUserDto {
 	@Override
 	public boolean deleteUser(String id) {
 		Connection con = null;
-		PreparedStatment pstmt = null;
+		PreparedStatement pstmt = null;
 		String sql = null;
 		boolean flag = false;
 		

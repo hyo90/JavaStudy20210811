@@ -7,6 +7,8 @@ import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
 
+import b22_윈도우빌더.dao.DeleteUserDao;
+import b22_윈도우빌더.dao.DeleteUserDaoImpl;
 import b22_윈도우빌더.dto.UserDto;
 import b22_윈도우빌더.service.LoginServiceImpl;
 import b22_윈도우빌더.service.SignUpService;
@@ -26,6 +28,7 @@ import java.awt.CardLayout;
 import javax.swing.SwingConstants;
 import javax.swing.JComboBox;
 import javax.swing.JToggleButton;
+import java.awt.Font;
 
 public class User extends JFrame { //JFrame을 상속받고있음
 	
@@ -48,7 +51,10 @@ public class User extends JFrame { //JFrame을 상속받고있음
 	
 	private LoginServiceImpl loginService;
 	private SignUpService signUpService;
-	private DeleteUserDto deleteUserDao;
+	private DeleteUserDao deleteUserDao;
+	private final JLabel lblNewLabel_1 = new JLabel("New label");
+	private JPasswordField new_pwd_tf;
+	private JPasswordField new_repwd_tf;
 
 	/**
 	 * Launch the application.
@@ -71,9 +77,13 @@ public class User extends JFrame { //JFrame을 상속받고있음
 	 * Create the frame.
 	 */
 	public User() {
+		
+		JLabel lblNewLabel = new JLabel("\uB9C8\uC774\uD398\uC774\uC9C0");
+		getContentPane().add(lblNewLabel, BorderLayout.CENTER);
+		getContentPane().add(lblNewLabel_1, BorderLayout.SOUTH);
 		loginService = new LoginServiceImpl();
 		signUpService = new SignUpServiceImpl();
-		DeleteUserDto = new DeleteUserDaoImpl();
+		deleteUserDao = new DeleteUserDaoImpl();
 				
 				
 		//loginLogic() = new loginLogic();
@@ -304,7 +314,7 @@ public class User extends JFrame { //JFrame을 상속받고있음
 						
 			}
 		});
-		
+		 
 		
 		sign_up_btn.setBounds(282, 416, 104, 29);
 		sing_up_pan.add(sign_up_btn);
@@ -361,26 +371,100 @@ public class User extends JFrame { //JFrame을 상속받고있음
 		
 		JButton User_drop_btn = new JButton("\uD68C\uC6D0\uD0C8\uD1F4");
 		User_drop_btn.addMouseListener(new MouseAdapter() {
-			@override
-			Public void mouseClicked(MouseEvent e) {
-				int flag = JOptionPane.showConfirmDialog(null,  "정말로 계젇ㅇ을 삭제하시겠습니까?", "회원탈퇴", JOptionPane)
-				if( flag == o) {
-					boolean dropFlag = deleteUserDao.deleteUser(loginSession.getUser_id()));
-					cl.mainCardPan.show(mainCardPan, "login_pan");
+			
+			@Override
+			public void mouseClicked(MouseEvent e) {
+				int flag = JOptionPane.showConfirmDialog(null,  "정말로 계정을 삭제하시겠습니까?", "회원탈퇴", JOptionPane.CANCEL_OPTION);
+				if( flag == 0) {
+					boolean dropFlag = deleteUserDao.deleteUser(loginSession.getUser_id());
+					cl_mainCardPan.show(mainCardPan, "login_pan");
 					login_id_tf.setText("");
-					login_pwd.tg.setText("");
+					login_pwd_tf.setText("");
 				}
 						 
 			}
-			}
-			
-		}
-	
-		user_drop_btn.setBounds(711,453,97,23);
+			  
+		});
+		
+		
+		
+		
+		
+		User_drop_btn.setBounds(639,440,101,29);
 		mypage_pan.add(User_drop_btn);
+		
+		JButton btnNewButton = new JButton("\uBE44\uBC00\uBC88\uD638 \uC218\uC815");
+		btnNewButton.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mouseClicked(MouseEvent e) {
+				while(true) {
+				String originPwd = JOptionPane.showInputDialog(null, "기존의 비밀번호를 입력해 주세요.", "비밀번호 수정을 해주세요.")
+				if(loginSession.getUer_pwd(), equls(originPwd)) {
+					new_pwd_tf.setEditable(true);
+					new_repwd_tf.setEditable(true);
+					update_btn.setEnabled(true);
+				} else if(OriginPwd == null) {
+					break;
+				}else {
+					JOptionPane.showmMessageialog(null, "비밀번호가 일치하지 않습니다.", "비밀번호 오류", JOptionPane.ERROR_MESSAGE);
+				}
+			}
+		});
+		
+		JButton update_btn = newJButton("\uBEE] ")
+		
+		
+		
+		btnNewButton.setBounds(506, 440, 110, 29);
+		mypage_pan.add(btnNewButton);
+		
+		JLabel lblNewLabel_2 = new JLabel("\uB9C8\uC774\uD398\uC774\uC9C0");
+		lblNewLabel_2.setFont(new Font("돋움", Font.PLAIN, 15));
+		lblNewLabel_2.setBounds(282, 47, 215, 38);
+		mypage_pan.add(lblNewLabel_2);
+		
+		JLabel lblNewLabel_3 = new JLabel("\uC0C8 \uBE44\uBC00\uBC88\uD638");
+		lblNewLabel_3.setHorizontalAlignment(SwingConstants.RIGHT);
+		lblNewLabel_3.setBounds(351, 130, 160, 29);
+		mypage_pan.add(lblNewLabel_3);
+		
+		JLabel lblNewLabel_4 = new JLabel("\uC0C8 \uBE44\uBC00\uBC88\uD638 \uD655\uC778");
+		lblNewLabel_4.setHorizontalAlignment(SwingConstants.RIGHT);
+		lblNewLabel_4.setBounds(351, 177, 160, 22);
+		mypage_pan.add(lblNewLabel_4);
+		
+		new_pwd_tf = new JPasswordField();
+		new_pwd_tf.setBounds(523, 130, 148, 29);
+		new_pwd_tf.setEditable(false);
+		mypage_pan.add(new_pwd_tf);
+		
+		new_repwd_tf = new JPasswordField();
+		new_repwd_tf.setBounds(523, 174, 148, 29);
+		new_repwd_tf.setEditable(false);
+		mypage_pan.add(new_repwd_tf);
+		
+		JButton update_btn = new JButton("\uC218\uC815 \uC644\uB8CC");
+		update_btn.setBounds(574, 217, 97, 23);
+		update_btn.setEnabled(false);
+		mypage_pan.add(update_btn);
 	} 
+	}
 }
 
-// 디자인에서 계속 추가하면 코드만 길어짐 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// 디자인에서 계속 추가하면 코드만 길어짐  
 // 모듈화시키기.....
 // 
